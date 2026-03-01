@@ -404,7 +404,7 @@ namespace makerbit {
    */
   //% subcategory="MP3"
   //% blockId=makerbit_mp3_on_track_started
-  //% block="lorsque piste MP3 démarée"
+  //% block="lorsque piste MP3 démarrée"
   //% weight=42
   export function onMp3TrackStarted(handler: () => void) {
     control.onEvent(
