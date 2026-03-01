@@ -29,7 +29,7 @@ const enum Mp3Command {
 }
 
 //% color=#0fbc11 icon="\u272a" block="MakerBit"
-//% category="MakerBit"
+//% category="Lecteur MP3"
 namespace makerbit {
   const enum PlayMode {
     Piste = 0,
@@ -178,7 +178,6 @@ namespace makerbit {
    * @param mp3RX MP3 device receiver pin (RX), eg: DigitalPin.P0
    * @param mp3TX MP3 device transmitter pin (TX), eg: DigitalPin.P1
    */
-  //% subcategory="MP3"
   //% blockId="makerbit_mp3_connect" block="connecter lecteur MP3 avec RX: %mp3RX | et TX: %mp3TX"
   //% mp3RX.fieldEditor="gridpicker" mp3RX.fieldOptions.columns=3
   //% mp3RX.fieldOptions.tooltips="false"
@@ -219,7 +218,6 @@ namespace makerbit {
    * @param track track index, eg:1
    * @param folder folder index, eg:1
    */
-  //% subcategory="MP3"
   //% blockId="makerbit_mp3_play_track" block="jouer piste MP3 %track | du dossier: %folder jusqu'à la fin"
   //% track.min=1 track.max=255
   //% folder.min=1 folder.max=99
@@ -242,7 +240,6 @@ namespace makerbit {
    * @param folder folder index, eg:1
    * @param repeat indicates whether to repeat the track, eg: Mp3Repeat.No
    */
-  //% subcategory="MP3"
   //% blockId="makerbit_mp3_play_track_from_folder" block="jouer piste MP3 %track | du dossier: %folder | %repeat"
   //% track.min=1 track.max=255
   //% folder.min=1 folder.max=99
@@ -272,7 +269,6 @@ namespace makerbit {
    * @param folder folder index, eg:1
    * @param repeat indicates whether to repeat the folder, eg: Mp3Repeat.No
    */
-  //% subcategory="MP3"
   //% blockId="makerbit_mp3_play_folder" block="jouer dossier MP3 %folder | %repeat"
   //% folder.min=1 folder.max=99
   //% weight=47
@@ -316,7 +312,6 @@ namespace makerbit {
    * Sets the volume.
    * @param volume volume in the range of 0 to 30: eg: 30
    */
-  //% subcategory="MP3"
   //% blockId="makerbit_mp3_set_volume" block="régler volume à %volume"
   //% volume.min=0 volume.max=30
   //% weight=46
@@ -336,7 +331,6 @@ namespace makerbit {
    * Dispatches a command to the MP3 device.
    * @param command command, eg: Mp3Command.PLAY_NEXT_TRACK
    */
-  //% subcategory="MP3"
   //% blockId="makerbit_mp3_run_command"
   //% block="MP3 %command"
   //% weight=45
@@ -402,7 +396,6 @@ namespace makerbit {
    * Do something when a MP3 track is started.
    * @param handler body code to run when event is raised
    */
-  //% subcategory="MP3"
   //% blockId=makerbit_mp3_on_track_started
   //% block="lorsque piste MP3 démarrée"
   //% weight=42
@@ -423,7 +416,6 @@ namespace makerbit {
    * Do something when a MP3 track is completed.
    * @param handler body code to run when event is raised
    */
-  //% subcategory="MP3"
   //% blockId=makerbit_mp3_on_track_completed
   //% block="lorsque piste MP3 finie"
   //% weight=41
@@ -443,7 +435,6 @@ namespace makerbit {
   /**
    * Returns the index of the selected MP3 folder.
    */
-  //% subcategory="MP3"
   //% blockId="makerbit_mp3_folder"
   //% block="MP3 dossier"
   //% weight=40
@@ -456,7 +447,6 @@ namespace makerbit {
    * It could be either a track started or completed event.
    * This block intended to be used inside of track event handlers.
    */
-  //% subcategory="MP3"
   //% blockId="makerbit_mp3_track"
   //% block="MP3 piste"
   //% weight=39
@@ -467,7 +457,6 @@ namespace makerbit {
   /**
    * Returns the MP3 volume.
    */
-  //% subcategory="MP3"
   //% blockId="makerbit_mp3_volume"
   //% block="MP3 volume"
   //% weight=38
