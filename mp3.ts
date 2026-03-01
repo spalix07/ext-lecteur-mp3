@@ -10,7 +10,7 @@ const enum Mp3Repeat {
 const enum Mp3Command {
   //% block="jouer piste suivante"
   PLAY_NEXT_TRACK,
-  //% block="jouer piste precedente"
+  //% block="jouer piste précédente"
   PLAY_PREVIOUS_TRACK,
   //% block="augmenter volume"
   INCREASE_VOLUME,
@@ -18,13 +18,13 @@ const enum Mp3Command {
   DECREASE_VOLUME,
   //% block="pause"
   PAUSE,
-  //% block="resume"
+  //% block="reprendre"
   RESUME,
   //% block="stop"
   STOP,
-  //% block="muet"
+  //% block="désactiver le son"
   MUTE,
-  //% block="reactiver le son"
+  //% block="réactiver le son"
   UNMUTE,
 }
 
