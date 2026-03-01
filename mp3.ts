@@ -1,20 +1,20 @@
 // MakerBit Serial MP3 blocks supporting Catalex Serial MP3 1.0
 
 const enum Mp3Repeat {
-  //% block="once"
+  //% block="une fois"
   No = 0,
-  //% block="forever"
+  //% block="pour toujours"
   Forever = 1,
 }
 
 const enum Mp3Command {
-  //% block="play next track"
+  //% block="jouer piste suivante"
   PLAY_NEXT_TRACK,
-  //% block="play previous track"
+  //% block="jouer piste precedente"
   PLAY_PREVIOUS_TRACK,
-  //% block="increase volume"
+  //% block="augmenter volume"
   INCREASE_VOLUME,
-  //% block="decrease volume"
+  //% block="diminuer volume"
   DECREASE_VOLUME,
   //% block="pause"
   PAUSE,
@@ -22,9 +22,9 @@ const enum Mp3Command {
   RESUME,
   //% block="stop"
   STOP,
-  //% block="mute"
+  //% block="muet"
   MUTE,
-  //% block="unmute"
+  //% block="reactiver le son"
   UNMUTE,
 }
 
@@ -32,8 +32,8 @@ const enum Mp3Command {
 //% category="MakerBit"
 namespace makerbit {
   const enum PlayMode {
-    Track = 0,
-    Folder = 1,
+    Piste = 0,
+    Dossier = 1,
   }
 
   interface DeviceState {
@@ -179,7 +179,7 @@ namespace makerbit {
    * @param mp3TX MP3 device transmitter pin (TX), eg: DigitalPin.P1
    */
   //% subcategory="MP3"
-  //% blockId="makerbit_mp3_connect" block="connect MP3 device with MP3 RX attached to %mp3RX | and MP3 TX to %mp3TX"
+  //% blockId="makerbit_mp3_connect" block="connecter lecteur MP3 avec RX: %mp3RX | et TX: %mp3TX"
   //% mp3RX.fieldEditor="gridpicker" mp3RX.fieldOptions.columns=3
   //% mp3RX.fieldOptions.tooltips="false"
   //% mp3TX.fieldEditor="gridpicker" mp3TX.fieldOptions.columns=3
@@ -220,7 +220,7 @@ namespace makerbit {
    * @param folder folder index, eg:1
    */
   //% subcategory="MP3"
-  //% blockId="makerbit_mp3_play_track" block="play MP3 track %track | from folder %folder and wait for completion"
+  //% blockId="makerbit_mp3_play_track" block="jouer piste MP3 %track | du dossier: %folder jusqu'à la fin"
   //% track.min=1 track.max=255
   //% folder.min=1 folder.max=99
   //% weight=49
@@ -243,7 +243,7 @@ namespace makerbit {
    * @param repeat indicates whether to repeat the track, eg: Mp3Repeat.No
    */
   //% subcategory="MP3"
-  //% blockId="makerbit_mp3_play_track_from_folder" block="play MP3 track %track | from folder %folder | %repeat"
+  //% blockId="makerbit_mp3_play_track_from_folder" block="jouer piste MP3 %track | du dossier: %folder | %repeat"
   //% track.min=1 track.max=255
   //% folder.min=1 folder.max=99
   //% weight=48
@@ -273,7 +273,7 @@ namespace makerbit {
    * @param repeat indicates whether to repeat the folder, eg: Mp3Repeat.No
    */
   //% subcategory="MP3"
-  //% blockId="makerbit_mp3_play_folder" block="play MP3 folder %folder | %repeat"
+  //% blockId="makerbit_mp3_play_folder" block="jouer dossier MP3 %folder | %repeat"
   //% folder.min=1 folder.max=99
   //% weight=47
   export function playMp3Folder(folder: number, repeat: Mp3Repeat): void {
@@ -317,7 +317,7 @@ namespace makerbit {
    * @param volume volume in the range of 0 to 30: eg: 30
    */
   //% subcategory="MP3"
-  //% blockId="makerbit_mp3_set_volume" block="set MP3 volume to %volume"
+  //% blockId="makerbit_mp3_set_volume" block="régler volume à %volume"
   //% volume.min=0 volume.max=30
   //% weight=46
   export function setMp3Volume(volume: number): void {
@@ -404,7 +404,7 @@ namespace makerbit {
    */
   //% subcategory="MP3"
   //% blockId=makerbit_mp3_on_track_started
-  //% block="on MP3 track started"
+  //% block="lorsque piste MP3 démarée"
   //% weight=42
   export function onMp3TrackStarted(handler: () => void) {
     control.onEvent(
@@ -425,7 +425,7 @@ namespace makerbit {
    */
   //% subcategory="MP3"
   //% blockId=makerbit_mp3_on_track_completed
-  //% block="on MP3 track completed"
+  //% block="lorsque piste MP3 finie"
   //% weight=41
   export function onMp3TrackCompleted(handler: () => void) {
     control.onEvent(
@@ -445,7 +445,7 @@ namespace makerbit {
    */
   //% subcategory="MP3"
   //% blockId="makerbit_mp3_folder"
-  //% block="MP3 folder"
+  //% block="MP3 dossier"
   //% weight=40
   export function mp3Folder(): number {
     return deviceState ? deviceState.folder : 1;
@@ -458,7 +458,7 @@ namespace makerbit {
    */
   //% subcategory="MP3"
   //% blockId="makerbit_mp3_track"
-  //% block="MP3 track"
+  //% block="MP3 piste"
   //% weight=39
   export function mp3Track(): number {
     return deviceState ? deviceState.lastTrackEventValue : 1;
